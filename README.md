@@ -1,2 +1,3 @@
 Esse repositório contém códigos confeccionados para treinamento
-1 - O arquivo "Codificador e decodificador" contém um código desenvolvido para o desafio de matemática feito no primeiro semestre de faculdade.
+
+O arquivo "1 Codificador e Decodificador" contém um programa em Python desenvolvido para o desafio de matemática feito em 2025/1.
