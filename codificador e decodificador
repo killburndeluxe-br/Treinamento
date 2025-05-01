@@ -1,0 +1,84 @@
+dicionario = {'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26, '.': 27, ',': 28, '!': 29, '?': 30, ' ': 31}
+dicionarioinverso = {1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E', 6: 'F', 7: 'G', 8: 'H', 9: 'I', 10: 'J', 11: 'K', 12: 'L', 13: 'M', 14: 'N', 15: 'O', 16: 'P', 17: 'Q', 18: 'R', 19: 'S', 20: 'T', 21: 'U', 22: 'V', 23: 'W', 24: 'X', 25: 'Y', 26: 'Z', 27: '.', 28: ',', 29: '!', 30: '?', 31: ' '}
+
+matriz = [4, 1, 3, 1]
+matrizinversa = [1, -1, -3, 4]
+codigo = []
+criptografado = []
+descodigo = []
+letraemuso = 0
+a = b = 0
+frase = []
+
+def TransToNumero():
+    for letra in mensagem:
+        if letra in dicionario:
+            letraemuso = dicionario.get(letra)
+            codigo.append(letraemuso)
+            letraemuso = 0
+    if len(codigo) % 2 != 0:
+        codigo.append(dicionario[' '])
+
+def Criptografar():
+    for i in range(0, len(codigo), 2):
+        x = codigo[i]
+        y = codigo[i+1]
+        a = x * matriz[0] + y * matriz[1]
+        b = x * matriz[2] + y * matriz[3]
+        criptografado.extend([a, b])
+
+def Descriptografar():
+    if len(criptografado) % 2 != 0:
+        criptografado.append(dicionario[" "])
+    for i in range(0, len(criptografado), 2):
+        x = criptografado[i]
+        y = criptografado[i+1]
+        a = x * matrizinversa[0] + y * matrizinversa[1]
+        b = x * matrizinversa[2] + y * matrizinversa[3]
+        descodigo.extend([a, b])
+
+def TransToLetras():
+    for numero in descodigo:
+        if numero in dicionarioinverso:
+            numeroemuso = dicionarioinverso.get(numero)
+            frase.append(numeroemuso)
+            numeroemuso = 0
+
+while True:
+    print("Você gostaria de criptografar ou descriptografar uma mensagem neste programa?")
+    try:
+        Escolhadousuario = int(input(
+        "Criptografar: tecle 1 e Enter \n"
+        "Descriptografar: tecle 2 e Enter \n"
+        "Fechar o programa: tecle 3 e Enter \n"
+        ))
+    except ValueError:
+        print("Por favor, digite um número válido.")
+        continue
+    if Escolhadousuario == 1:
+        mensagem = str(input("Digite a mensagem à ser codificada utilizando somente: letras, espaços, virgulas, ponto, exclamação e interrogação: \n"
+        "(Atenção: outros caracteres serão desconsiderados):"))
+        TransToNumero()
+        Criptografar()
+        print("Aqui está sua mensagem numérica criptografada:")
+        print(*criptografado, sep=" ")
+    elif Escolhadousuario == 2:
+        mensagem = input("Digite a mensagem à ser descodificada utilizando somente números separados por espaços: \n"
+        "(Atenção: outros caracteres serão desconsiderados):")
+        numeros = mensagem.strip().split()
+        criptografado = [int(n) for n in numeros if n.isdigit()]
+        Descriptografar()
+        TransToLetras()
+        print("Mensagem numérica Descriptografada:")
+        print(*frase, sep="")
+    elif Escolhadousuario == 3:
+        print("Tamo junto!")
+        break
+    else:
+        print("Tente novamente...")
+    codigo = []
+    criptografado = []
+    descodigo = []
+    letraemuso = 0
+    a = b = c = d = 0
+    frase = []
