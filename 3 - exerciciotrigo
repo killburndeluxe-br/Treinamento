@@ -1,19 +1,21 @@
 print("Esse é um programa que ajuda o monge a calcular o pagamento da rainha baseado na contribuição inicial.")
 i = graoTrigo = int(input("E aí, minha rainha, com quantos grãos de trigo devo iniciar? "))
-print("Certo, vamos começar com ", graoTrigo,".", sep="");
+print("Certo, vamos começar com grão(s) iguais à ", graoTrigo,".", sep="");
 casasnotabuleiro = int(input("Quantas casas tem no seu tabuleiro de Xadrex? "))
 if (casasnotabuleiro == 64):
     print("Ah, é um tabuleiro normal... Vamos lá!");
 else:
     print("Tabuleiro diferentão esse seu... Vamos lá!");
 
-
 casa = 1
-soma = i
+soma = 1
 
-for casa in range(1, casasnotabuleiro):
-    i *= 2;
-    soma += i;
-    casa += 1
-print("Você terá que me fornecer ", soma, " grãos de trigo no final.", sep="");
-print("Trato é trato.")
+if (casasnotabuleiro > 0):
+    for casa in range(1, casasnotabuleiro):
+        i *= 2;
+        soma += i;
+        casa += 1
+    print("Você terá que me fornecer ", soma, " grãos de trigo no final.", sep="");
+    print("Trato é trato.")
+else:
+    print(casasnotabuleiro, " casa(s), zero grãos.", sep="")
