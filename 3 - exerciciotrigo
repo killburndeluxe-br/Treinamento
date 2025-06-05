@@ -6,5 +6,5 @@ for casa in range (1, 64):
     graoTrigo *= 2;
     soma += graoTrigo;
     casa += 1
-print("O pagamento será de", soma, "grãos de trigo".);
+print("O pagamento será de", soma, "grãos de trigo.");
 print("Programa encerrado.")
