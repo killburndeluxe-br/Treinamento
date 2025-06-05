@@ -15,7 +15,7 @@ if (casasnotabuleiro > 0):
         i *= 2;
         soma += i;
         casa += 1
-    print("Você terá que me fornecer ", soma, " grãos de trigo no final.", sep="");
+    print("Você terá que me fornecer ", soma, " grão(s) de trigo no final.", sep="");
     print("Trato é trato.")
 else:
     print(casasnotabuleiro, " casa(s), zero grãos.", sep="")
