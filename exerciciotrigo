@@ -1,0 +1,14 @@
+print("Esse é um programa que ajuda o monge a calcular o pagamento da rainha baseado na contribuição inicial.")
+i = graoTrigo = int(input("E aí, minha rainha, com quantos grãos de trigo devo iniciar? "))
+print("Certo, vamos começar com ", graoTrigo,".", sep="");
+
+casa = 1
+soma = 0
+soma += i
+
+while casa <= 64:
+    i *= 2;
+    soma += i;
+    casa += 1
+print("Você terá que me fornecer ", soma, " grãos de trigo", sep="");
+print("Trato é trato.")
