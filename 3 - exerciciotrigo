@@ -1,4 +1,4 @@
-print("Esse é um programa que ajuda o monge a calcular o pagamento da rainha baseado na contribuição inicial.")
+print("Olá, esse é um programa que ajuda o monge a calcular o pagamento da rainha baseado na contribuição inicial.")
 i = graoTrigo = int(input("E aí, minha rainha, com quantos grãos de trigo devo iniciar? "))
 print("Certo, vamos começar com grão(s) iguais à ", graoTrigo,".", sep="");
 casasnotabuleiro = int(input("Quantas casas tem no seu tabuleiro de Xadrex? "))
@@ -19,3 +19,4 @@ if (casasnotabuleiro > 0):
     print("Trato é trato.")
 else:
     print(casasnotabuleiro, " casa(s), zero grãos.", sep="")
+print("Tchau!")
