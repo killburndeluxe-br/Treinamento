@@ -3,10 +3,9 @@ i = graoTrigo = int(input("E aí, minha rainha, com quantos grãos de trigo devo
 print("Certo, vamos começar com ", graoTrigo,".", sep="");
 
 casa = 1
-soma = 0
-soma += i
+soma = i
 
-while casa <= 64:
+for casa in range(1, 64):
     i *= 2;
     soma += i;
     casa += 1
